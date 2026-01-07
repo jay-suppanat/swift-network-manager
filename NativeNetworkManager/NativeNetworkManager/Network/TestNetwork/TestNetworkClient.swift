@@ -39,6 +39,7 @@ enum TestNetworkClient {
     
     static func requestTestPOSTService(firstName: String, lastName: String, completion: @escaping (TestGetServiceModel) -> Void) {
         NetworkManager.performRequest(with: TestNetworkRouter.testPOSTService(firstName: firstName, lastName: lastName)) { (response: TestGetServiceModel?, error) in
+            print("something")
             guard let data = response else {
                 return
             }
